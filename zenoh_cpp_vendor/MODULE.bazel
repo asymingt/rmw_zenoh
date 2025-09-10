@@ -15,21 +15,7 @@
 # Package information
         
 module(
-    name = "rmw_zenoh_cpp",
+    name = "zenoh_cpp_vendor",
     version = "0.8.1",
     compatibility_level = 0,
 )
-
-# Dependencies
-
-bazel_dep(name = "ament_index_cpp", version = "1.12.0")
-bazel_dep(name = "fastcdr", version = "2.3.0")
-bazel_dep(name = "rcpputils", version = "2.14.2")
-bazel_dep(name = "rcutils", version = "7.0.0")
-bazel_dep(name = "rmw", version = "7.9.0")
-bazel_dep(name = "rosidl_runtime_c", version = "5.0.0")
-bazel_dep(name = "rosidl_typesupport_fastrtps_c", version = "3.9.0")
-bazel_dep(name = "rosidl_typesupport_fastrtps_cpp", version = "3.9.0")
-bazel_dep(name = "rules_cc", version = "0.2.4")
-bazel_dep(name = "tracetools", version = "8.8.0")
-bazel_dep(name = "zenoh-cpp", version = "1.4.0")
