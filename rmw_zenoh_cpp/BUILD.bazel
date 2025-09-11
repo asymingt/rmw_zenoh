@@ -15,9 +15,17 @@
 
 # Imports
 
+load("@ros//:defs.bzl", "ros_data")
 load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary")
 
 package(default_visibility = ["//visibility:public"])
+
+# Data
+
+ros_data(
+    name = "config",
+    data = glob(["config/**"]),
+)
 
 # Libraries
 
@@ -61,13 +69,16 @@ cc_library(
     ],
     local_defines = ["ROS_PACKAGE_NAME=\\\"rmw_zenoh_cpp\\\""],
     copts = ["-fvisibility=hidden"],
+    cxxopts = ["-fvisibility=hidden"],
     linkopts = ["-fvisibility=hidden"],
+    data = [":config"],
     deps = [
         "@ament_index_cpp",
         "@fastcdr",
         "@rcpputils",
         "@rcutils",
         "@rmw",
+        "@rmw_dds_common",
         "@rosidl_runtime_c",
         "@rosidl_typesupport_fastrtps_c",
         "@rosidl_typesupport_fastrtps_cpp",
@@ -88,6 +99,7 @@ cc_binary(
         "src/detail/zenoh_config.cpp",
         "src/zenohd/main.cpp",
     ],
+    data = [":config"],
     deps = [
         "@ament_index_cpp",
         "@rcpputils",
