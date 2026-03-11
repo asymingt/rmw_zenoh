@@ -108,23 +108,3 @@ cc_binary(
         "@zenoh-cpp",
     ],
 )
-
-# Tests
-
-# cc_library(
-#     name = "rmw_zenoh_cpp_test_fixture",
-#     srcs = ALL_HEADERS + [
-#         "src/detail/logging.cpp",
-#         "src/detail/zenoh_config.cpp",
-#         "src/rmw_test_fixture.cpp",
-#     ],
-#     deps = [
-#         "@ament_index_cpp",
-#         "@rcpputils",
-#         "@rcutils",
-#         "@rmw",
-#         "@rmw_test_fixture",
-#         "@rosidl_runtime_c",
-#         "@zenoh-cpp",
-#     ],
-# )
